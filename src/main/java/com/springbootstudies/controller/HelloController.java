@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(path="/api")
 public class HelloController {
 
-    @GetMapping(path= "/hello")
+    @GetMapping(path="/hello")
 
     public String sayHello(){
         return "Hello World!";
@@ -21,4 +21,10 @@ public class HelloController {
     public String delete(){
         return ("Data deleted!");
     }
+
+    @GetMapping(path="/message/{m}")
+    public String getMyMessage(@PathVariable("m") String message){
+        return "Your message is: " + message;
+    }
+
 }
